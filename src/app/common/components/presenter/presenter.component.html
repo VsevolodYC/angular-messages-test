@@ -1,0 +1,21 @@
+<div class="presenter">
+  <ng-template *ngIf="total > 0 && total != expired; then isMessages else isNotMessages"></ng-template>
+  <ng-template #isMessages>
+    <mat-list class="presenter__messages">
+      <h2 mat-subheader>Messages :</h2>
+      <ng-container *ngFor="let item of messages">
+          <app-message-card mat-list-item
+                            class="presenter__message"
+                            [content]="item.message"
+                            [expiredAt]="item.expired_at"
+                            [type]="item.type"
+                            (onExpired)="onExpired($event)"></app-message-card>
+      </ng-container>
+    </mat-list>
+  </ng-template>
+  <ng-template #isNotMessages>
+    <div class="presenter__not-messages">
+      <h2>Not messages data!</h2>
+    </div>
+  </ng-template>
+</div>

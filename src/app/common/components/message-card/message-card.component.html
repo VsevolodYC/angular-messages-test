@@ -1,0 +1,17 @@
+<ng-container *ngIf="visible">
+  <div class="message-card">
+    <mat-card>
+      <div class="message-card__content">
+        <ng-container [ngSwitch]="type">
+          <ng-container *ngSwitchCase="MessageTypes.Text">
+            <div class="message-card__text" [innerHtml]="content"></div>
+          </ng-container>
+          <ng-container *ngSwitchCase="MessageTypes.Base64">
+            <img class="message-card__img" [src]="content">
+          </ng-container>
+        </ng-container>
+      </div>
+      <div class="message-card__expired-at">Expired at: {{expiredAt | date: 'medium'}}</div>
+    </mat-card>
+  </div>
+</ng-container>

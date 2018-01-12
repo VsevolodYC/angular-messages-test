@@ -1,0 +1,24 @@
+@import "src/assets/styles/mixins.scss";
+
+.presenter {
+  display: flex;
+  min-width: 500px;
+
+  &__messages {
+    .mat-subheader {
+      padding-left: 0;
+    }
+  }
+  &__message {
+    display: flex;
+
+    min-width: 500px;
+    max-width: 500px;
+    height: auto;
+  }
+  &__not-messages {
+    width: 100%;
+
+    @include flex-center();
+  }
+}

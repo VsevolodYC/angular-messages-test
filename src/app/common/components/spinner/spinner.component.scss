@@ -1,0 +1,9 @@
+@import "src/assets/styles/mixins.scss";
+
+.spinner {
+  @include flex-center();
+
+  position: absolute;
+  left: calc(50% - 50px);
+  top: calc(50% - 50px);
+}
